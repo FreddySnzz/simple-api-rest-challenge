@@ -1,0 +1,28 @@
+services:
+  api:
+    build: .
+    container_name: simple_api_rest_challenger
+    ports:
+      - "8089:8089"
+    depends_on:
+      - database
+    environment:
+      - DATABASE_URL=postgres://postgres:1234@localhost:5432/simple-api-challenger
+
+  database:
+    image: postgres:15
+    container_name: simple_api_rest_challenger_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: simple-api-challenger
+      POSTGRES_HOST: localhost
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+  
