@@ -15,7 +15,7 @@ async function bootstrap() {
       ] 
     }
   );
-  const appPort = process.env.API_PORT || 8080;
+  const appPort = process.env.PORT || 8080;
 
   app.enableCors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
@@ -40,7 +40,7 @@ async function bootstrap() {
       description: 'Local server',
     },
     { 
-      url: 'https://prod.example.com', 
+      url: 'https://simple-api-rest-challenge-production.up.railway.app', 
       description: 'Production' 
     },
   ];
