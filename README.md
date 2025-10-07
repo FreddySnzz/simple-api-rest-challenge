@@ -83,10 +83,15 @@ volumes:
   pgdata:
 ```
 
-<!-- __Note²: You will need run the migrations to database.__ <br>
+### Open your Docker App and run:
 ```bash
-$ npm run typeorm migration:run
-``` -->
+$ docker-compose up --build -d
+```
+
+__Note²: You maybe will need run this to generate Prisma Models on client:__ <br>
+```bash
+$ npx prisma generate
+```
 
 
 ## Compile and run the project
