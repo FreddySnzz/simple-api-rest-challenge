@@ -2,11 +2,11 @@ import { IsOptional, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateTaskDto {
-  @ApiProperty({ example: 'Task 1', description: 'Título da task.' })
+  @ApiProperty({ example: 'Tarefa 1', description: 'Título da tarefa.' })
   @IsString()
   title: string;
 
-  @ApiProperty({ example: 'Task Description', description: 'Descrição detalhada da task.' })
+  @ApiProperty({ example: 'Descrição', description: 'Descrição detalhada da tarefa.' })
   @IsString()
   @IsOptional()
   description: string;

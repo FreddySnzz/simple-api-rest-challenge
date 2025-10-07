@@ -31,7 +31,7 @@ export class TaskController {
 
   @Post()
   @UsePipes(ValidationPipe)
-  @ApiOperation({ summary: 'Cria uma nova task' })
+  @ApiOperation({ summary: 'Cria uma nova tarefa' })
   @ApiBody({ type: CreateTaskDto })
   @ApiStandardResponses()
   async create(
@@ -40,14 +40,14 @@ export class TaskController {
     return this.taskService.create(createTask);
   };
 
-  @ApiOperation({ summary: 'Retorna uma lista de tasks' })
+  @ApiOperation({ summary: 'Retorna uma lista de tarefa' })
   @ApiStandardResponses()
   @Get()
   async findAll(): Promise<Task[]> {
     return this.taskService.findAll();
   };
 
-  @ApiOperation({ summary: 'Retorna uma lista de tasks vinculadas à um usuário' })
+  @ApiOperation({ summary: 'Retorna uma lista de tarefa vinculadas à um usuário' })
   @ApiStandardResponses()
   @Get(':id/all')
   async findAllTasksByUser(
@@ -56,7 +56,7 @@ export class TaskController {
     return this.taskService.findAllTasksByUser(id);
   };
 
-  @ApiOperation({ summary: 'Busca uma task por ID' })
+  @ApiOperation({ summary: 'Busca uma tarefa por ID' })
   @ApiStandardResponses()
   @Get(':id')
   async findOne(
@@ -67,7 +67,7 @@ export class TaskController {
 
   @Put(':id')
   @UsePipes(ValidationPipe)
-  @ApiOperation({ summary: 'Atualiza informações de uma task' })
+  @ApiOperation({ summary: 'Atualiza informações de uma tarefa' })
   @ApiBody({ type: UpdateTaskDto })
   @ApiStandardResponses()
   async updateTask(
@@ -78,7 +78,7 @@ export class TaskController {
   };
 
   @Patch(':id/status')
-  @ApiOperation({ summary: 'Atualiza o status de uma task' })
+  @ApiOperation({ summary: 'Atualiza o status de uma tarefa' })
   @ApiStandardResponses()
   async toggleStatus(
     @Param('id') id: number
@@ -88,7 +88,7 @@ export class TaskController {
   };
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Deleta uma task' })
+  @ApiOperation({ summary: 'Deleta uma tarefa' })
   @ApiStandardResponses()
   async delete(
     @Param('id') id: number
