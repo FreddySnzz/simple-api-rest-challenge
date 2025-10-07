@@ -45,7 +45,7 @@ __Note: You will need .env, Dockerfile and docker-compose.yml to start the proje
 #### .Env file:
 ```bash
 PROJECT_NAME=simple-api-rest-challenger
-API_PORT=8080
+PORT=8080
 DATABASE_URL=postgres://postgres:1234@localhost:5432/simple-api-challenger
 ```
 
