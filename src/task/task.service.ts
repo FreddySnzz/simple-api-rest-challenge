@@ -44,7 +44,7 @@ export class TaskService {
     return task;
   };
 
-  async updateStatus(
+  async updateTask(
     id: number,
     updateTaskStatus: UpdateTaskDto
   ): Promise<Task> {

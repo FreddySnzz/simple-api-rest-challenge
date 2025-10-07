@@ -74,7 +74,7 @@ export class TaskController {
     @Param('id') id: number, 
     @Body() updateTask: UpdateTaskDto
   ): Promise<Task> {
-    return this.taskService.updateStatus(id, updateTask);
+    return this.taskService.updateTask(id, updateTask);
   };
 
   @Patch(':id/status')
