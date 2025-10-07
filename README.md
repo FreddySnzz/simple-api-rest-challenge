@@ -83,6 +83,11 @@ volumes:
   pgdata:
 ```
 
+### Open your Docker App and run:
+```bash
+$ docker-compose up --build -d
+```
+
 <!-- __Note²: You will need run the migrations to database.__ <br>
 ```bash
 $ npm run typeorm migration:run
