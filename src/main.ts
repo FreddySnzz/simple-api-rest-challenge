@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { setupSwagger } from './config/swagger.config';
 
 import { AppModule } from './app.module';
 
@@ -43,6 +44,8 @@ async function bootstrap() {
       description: 'Production' 
     },
   ];
+
+  setupSwagger(app);
 
   await app.listen(appPort, async () => {
     const logger = new Logger();
